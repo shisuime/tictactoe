@@ -6,13 +6,32 @@ const StatusMessage = ({ winner, current }) => {
   //     : `Next player is ${current.isXNext ? 'X' : 'O'}`;
   const noMovesleft = current.board.every(el => el !== null);
   return (
-    <h2>
-      {winner && `Winner is ${winner}`}
-      {!winner &&
-        !noMovesleft &&
-        `Next player is ${current.isXNext ? 'X' : 'O'}`}
-      {!winner && noMovesleft && 'X and O tied'}
-    </h2>
+    <div className="status-message">
+      {winner && (
+        <>
+          Winner is{' '}
+          <span className={winner === 'X' ? 'text-green' : 'text-orange'}>
+            {winner}
+          </span>
+        </>
+      )}
+      {!winner && !noMovesleft && (
+        <>
+          Next player is{' '}
+          <span
+            className={current.isXNext === 'X' ? 'text-green' : 'text-orange'}
+          >
+            {current.isXNext ? 'X' : 'O'}
+          </span>
+        </>
+      )}
+      {!winner && noMovesleft && (
+        <>
+          <span className="text-green">X</span>and{''}
+          <span className="text-orange">O</span>tied
+        </>
+      )}
+    </div>
   );
 };
 
