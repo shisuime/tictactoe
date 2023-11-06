@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Board from './components/board';
+import Board from './components/Board'
 import History from './components/History';
 import StatusMessage from './components/StatusMessage';
 import { calculateWinner } from './helpers';

@@ -1,5 +1,5 @@
 import React from 'react';
-import Square from './square';
+import Square from './Square'
 const Board = ({ board, handlesquareclick, winningSquares }) => {
   const renderSquare = position => {
     const isWinningSquare = winningSquares.includes(position);
